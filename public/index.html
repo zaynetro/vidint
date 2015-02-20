@@ -12,10 +12,21 @@
 
     <div class='video-holder'>
       <button id='startBtn' class='start-btn'>Record</button>
-      <button id='stopBtn' class='stop-btn'>Stop</button>
-      <video id="video" width="700" height="500" autoplay></video>
+      <button id='stopBtn' class='stop-btn'>Stop</button><br />
+      <video id="video" width="600" height="400" autoplay></video>
     </div>
 
+    <div class='form'>
+      <input type='text' id='companyName' placeholder='Company name' />
+      <button id='uploadBtn'>Upload video</button>
+    </div>
+
+    <div class='links'>
+      <h2>Distribute link:</h2>
+      <input type='text' id='finalLink' disabled />
+    </div>
+
+    <script src="//www.parsecdn.com/js/parse-1.3.5.min.js"></script>
     <script src="//cdn.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src='/js/bundle.js'></script>
   </body>
