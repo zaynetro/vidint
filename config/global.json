@@ -1,0 +1,11 @@
+{
+    "applications": {
+        "Vidint": {
+            "applicationId": "CM0kieoQyGZwRayG9jUT7RLYwaUujPVa9B9GrsyH", 
+            "masterKey": "bVdrSAKLiXDSRTczva820Ae8NTEXpQhSx7aIH3a1"
+        }, 
+        "_default": {
+            "link": "Vidint"
+        }
+    }
+}
