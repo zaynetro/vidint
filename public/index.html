@@ -8,14 +8,15 @@
   <body>
     <div class='welcome'>
       <h1>Record your interview question</h1>
-
-      <button id='initBtn' class='init-btn'>Record</button>
     </div>
 
     <div class='video-holder'>
+      <button id='startBtn' class='start-btn'>Record</button>
+      <button id='stopBtn' class='stop-btn'>Stop</button>
       <video id="video" width="700" height="500" autoplay></video>
     </div>
 
-    <script src='/js/app.js' async></script>
+    <script src="//cdn.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src='/js/bundle.js'></script>
   </body>
 </html>
