@@ -8,7 +8,8 @@ var startBtn = document.querySelector('#startBtn');
 var stopBtn = document.querySelector('#stopBtn');
 var video = document.querySelector('#video');
 var uploadBtn = document.querySelector('#uploadBtn');
-var finalLink = document.querySelector('#finalLink');
+var replyLink = document.querySelector('#replyLink');
+var answersLink = document.querySelector('#answersLink');
 var companyName = document.querySelector('#companyName');
 
 startBtn.onclick = function () {
@@ -88,7 +89,8 @@ uploadBtn.onclick = function () {
       interview.set('company', companyName.value);
       interview.save(null, {
         success : function (interview) {
-          finalLink.value = interview.id;
+          replyLink.value = pageUrl() + 'reply.html#to=' + interview.id;
+          answersLink.value = pageUrl() + 'answers.html#to=' + interview.id;
         },
 
         error : function (interview, error) {
@@ -100,4 +102,8 @@ uploadBtn.onclick = function () {
       console.log(error);
     });
   });
+
+  function pageURL() {
+    return location.protocol + '//' + location.host + '/';
+  }
 };
