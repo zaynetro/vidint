@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Vidint": {
+            "applicationId": "",
+            "masterKey": ""
+        },
+        "_default": {
+            "link": "Vidint"
+        }
+    },
+    "global": {
+        "parseVersion": "1.3.5"
+    }
+}
