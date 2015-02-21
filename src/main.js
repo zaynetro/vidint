@@ -35,7 +35,6 @@ stopBtn.onclick = function () {
    uploadBtn.disabled = false;
 
   recorder.stopRecording(function (url) {
-    //  downloadURL.innerHTML = '<a href="' + url + '" download="RecordRTC.webm" target="_blank">Save RecordRTC.webm to Disk!</a>';
     video.src = url;
     video.muted = false;
     video.play();
@@ -46,12 +45,6 @@ stopBtn.onclick = function () {
       // dirty workaround for: "firefox seems unable to playback"
       // video.src = URL.createObjectURL(audioVideoRecorder.getBlob());
     };
-
-    // var recordedBlob = window.audioVideoRecorder.getBlob();
-    // window.audioVideoRecorder.getDataURL(function (dataURL) {
-    //   console.log(dataURL);
-    // });
-    // console.log(recordedBlob);
   });
 };
 
@@ -83,6 +76,10 @@ uploadBtn.onclick = function () {
   //   video.src = base64data;
   // };
 
+  stopBtn.disabled = true;
+  startBtn.disabled = true;
+  uploadBtn.disabled = true;
+
   recorder.getDataURL(function (dataURL) {
 
     var file = new Parse.File('video.webm', { base64: dataURL });
@@ -95,15 +92,18 @@ uploadBtn.onclick = function () {
         success : function (interview) {
           replyLink.value = pageUrl() + 'reply.html#to=' + interview.id;
           answersLink.value = pageUrl() + 'answers.html#to=' + interview.id;
+          alert('Successfully saved, copy links below');
         },
 
         error : function (interview, error) {
           console.log(error);
+          alert('Interview question is not associated with the video, see console for more details');
         }
       });
 
     }, function (error) {
       console.log(error);
+      alert('File is not saved, see console for more details');
     });
   });
 
