@@ -52,8 +52,17 @@ ansQuery.find({
     answers.forEach(function (answer) {
       var li = document.createElement('li');
 
-      var name = document.createElement('span');
-      name.textContent = answer.get('name');
+      var nameBox = document.createElement('div');
+      nameBox.className = 'username';
+
+      var nameLabel = document.createElement('b');
+      nameLabel.textContent = 'Name: ';
+
+      var nameContent = document.createElement('span');
+      nameContent.textContent = answer.get('name');
+
+      nameBox.appendChild(nameLabel);
+      nameBox.appendChild(nameContent);
 
       var video = document.createElement('video');
       video.src = answer.get('video')._url;
@@ -64,7 +73,7 @@ ansQuery.find({
 
       div.appendChild(video);
 
-      li.appendChild(name);
+      li.appendChild(nameBox);
       li.appendChild(div);
 
       answersNode.appendChild(li);
