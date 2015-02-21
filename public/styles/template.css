@@ -37,8 +37,11 @@ ul {
   margin: 0;
 }
 
-.links li {
+li {
   list-style-type: none;
+}
+
+.links li {
   margin: 1rem 0;
 }
 

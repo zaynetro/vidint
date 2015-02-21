@@ -52,15 +52,20 @@ ansQuery.find({
     answers.forEach(function (answer) {
       var li = document.createElement('li');
 
-      var name = document.createElement('div');
+      var name = document.createElement('span');
       name.textContent = answer.get('name');
 
       var video = document.createElement('video');
       video.src = answer.get('video')._url;
       video.controls = true;
 
+      var div = document.createElement('div');
+      div.className = 'video-wrap';
+
+      div.appendChild(video);
+
       li.appendChild(name);
-      li.appendChild(video);
+      li.appendChild(div);
 
       answersNode.appendChild(li);
     });
