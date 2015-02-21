@@ -10,23 +10,44 @@
       <h1>Record your interview question</h1>
     </div>
 
+    <div class='note'>
+      <b>Note:</b> Current demo works only in Firefox, tested in 35.0.1. Don't record long videos, there is a limit of 10 MB for each video.
+    </div>
+
     <div class='video-holder'>
-      <button id='startBtn' class='start-btn'>Record</button>
-      <button id='stopBtn' class='stop-btn'>Stop</button><br />
-      <video id="video" width="600" height="400" autoplay></video>
+      <button id='startBtn' class='start-btn btn'>Record</button>
+      <button id='stopBtn' class='stop-btn btn'>Stop</button>
+      <div class='video-wrap'>
+        <video id="video" autoplay></video>
+      </div>
     </div>
 
     <div class='form'>
-      <input type='text' id='companyName' placeholder='Company name' />
-      <button id='uploadBtn'>Upload video</button>
+      <label for='companyName'>Company name:</label>
+      <input type='text' class='text' id='companyName' />
+      <button id='uploadBtn' class='btn'>Upload video</button>
     </div>
 
     <div class='links'>
-      <h2>Distribute link:</h2>
-      <input type='text' id='replyLink' readonly />
+      <h2>Links:</h2>
 
-      <h2>Answers link:</h2>
-      <input type='text' id='answersLink' readonly />
+      <ul>
+        <li>
+          <b>Distribute:</b><br />
+          <input type="text" class="text" id="replyLink" onfocus="this.select();" onmouseup="return false;" readonly />
+          <div class='note'>
+            Candidates can leave their video replies on this link.
+          </div>
+        </li>
+
+        <li>
+          <b>Answers:</b><br />
+          <input type="text" class="text" id="answersLink" onfocus="this.select();" onmouseup="return false;" readonly />
+          <div class='note'>
+            You can view all replies on this link.
+          </div>
+        </li>
+      </ul>
     </div>
 
     <script src="//cdn.WebRTC-Experiment.com/RecordRTC.js"></script>
