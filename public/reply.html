@@ -10,6 +10,10 @@
       <h1><span id='companyName'></span> interview</h1>
     </div>
 
+    <div class='note'>
+      This is replies page. You can leave video answers to the interview question.
+    </div>
+
     <div class='question'>
       <div class='video-wrap'>
         <video id='question' controls></video>
@@ -19,7 +23,7 @@
     <div class='answer'>
       <h2>Your answer</h2>
       <button id='startBtn' class='start-btn btn'>Record</button>
-      <button id='stopBtn' class='stop-btn btn'>Stop</button>
+      <button id='stopBtn' class='stop-btn btn' disabled>Stop</button>
       <div class='video-wrap'>
         <video id="video" autoplay></video>
       </div>
@@ -28,7 +32,7 @@
     <div class='form'>
       <label for='username'>Your full name:</label>
       <input type='text' class='btn' id='username' />
-      <button id='uploadBtn' class='btn'>Send answer</button>
+      <button id='uploadBtn' class='btn' disabled>Send answer</button>
     </div>
 
     <script src="//cdn.WebRTC-Experiment.com/RecordRTC.js"></script>

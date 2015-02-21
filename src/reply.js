@@ -17,7 +17,10 @@ var recorder;
 
 var hash = location.hash;
 
-if(!hash.length) return console.log('Wrong address');
+if(!hash.length) {
+  alert('Wrong address');
+  return console.log('Wrong address');
+}
 
 // Remove hash mark
 hash = hash.slice(1);
@@ -32,7 +35,10 @@ params.forEach(function (param) {
   }
 });
 
-if(!interviewId) return console.log('Wrong address');
+if(!interviewId) {
+  alert('Wrong address');
+  return console.log('Wrong address');
+}
 
 var Interview = Parse.Object.extend('Interview');
 var query = new Parse.Query(Interview);
@@ -44,6 +50,7 @@ query.get(interviewId, {
 
   error : function (_, error) {
     console.log(error);
+    alert('Inteview question not found');
   }
 });
 
@@ -98,6 +105,10 @@ function captureUserMedia(callback) {
 
 uploadBtn.onclick = function () {
 
+  stopBtn.disabled = true;
+  startBtn.disabled = true;
+  uploadBtn.disabled = true;
+
   recorder.getDataURL(function (dataURL) {
 
     var file = new Parse.File('video.webm', { base64: dataURL });
@@ -109,17 +120,19 @@ uploadBtn.onclick = function () {
       answer.set('interview', interviewId);
       answer.save(null, {
         success : function (answer) {
-          // finalLink.value = answer.id;
           console.log('Replied');
+          alert(answer.get('name') + ', you successfully replied');
         },
 
         error : function (answer, error) {
           console.log(error);
+          alert('Answer is not associated with the video, see console for more details');
         }
       });
 
     }, function (error) {
       console.log(error);
+      alert('File is not saved, see console for more details');
     });
   });
 };
