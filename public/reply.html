@@ -1,0 +1,33 @@
+<!doctype>
+<html>
+  <head>
+    <title>Vidint - Video interviewing</title>
+    <meta charset="utf-8" />
+    <link href="/styles/template.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class='welcome'>
+      <h1><span id='companyName'></span> interview</h1>
+    </div>
+
+    <div class='question'>
+      <video id='question' width="600" height="400" controls></video>
+    </div>
+
+    <div class='answer'>
+      <h2>Your answer</h2>
+      <button id='startBtn' class='start-btn'>Record</button>
+      <button id='stopBtn' class='stop-btn'>Stop</button><br />
+      <video id="video" width="600" height="400" autoplay></video>
+    </div>
+
+    <div class='form'>
+      <input type='text' id='username' placeholder='Your full name' />
+      <button id='uploadBtn'>Send answer</button>
+    </div>
+
+    <script src="//www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+    <script src="//cdn.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src='/js/reply.js'></script>
+  </body>
+</html>
