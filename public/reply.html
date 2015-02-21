@@ -11,22 +11,26 @@
     </div>
 
     <div class='question'>
-      <video id='question' width="600" height="400" controls></video>
+      <div class='video-wrap'>
+        <video id='question' controls></video>
+      </div>
     </div>
 
     <div class='answer'>
       <h2>Your answer</h2>
-      <button id='startBtn' class='start-btn'>Record</button>
-      <button id='stopBtn' class='stop-btn'>Stop</button><br />
-      <video id="video" width="600" height="400" autoplay></video>
+      <button id='startBtn' class='start-btn btn'>Record</button>
+      <button id='stopBtn' class='stop-btn btn'>Stop</button>
+      <div class='video-wrap'>
+        <video id="video" autoplay></video>
+      </div>
     </div>
 
     <div class='form'>
-      <input type='text' id='username' placeholder='Your full name' />
-      <button id='uploadBtn'>Send answer</button>
+      <label for='username'>Your full name:</label>
+      <input type='text' class='btn' id='username' />
+      <button id='uploadBtn' class='btn'>Send answer</button>
     </div>
 
-    <script src="//www.parsecdn.com/js/parse-1.3.5.min.js"></script>
     <script src="//cdn.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src='/js/reply.js'></script>
   </body>
